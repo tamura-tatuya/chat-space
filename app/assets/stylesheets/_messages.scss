@@ -1,4 +1,3 @@
-$mainwhite: #FFF;
 
 * {
   box-sizing: border-box;
@@ -11,7 +10,6 @@ html {
   background: mainwhite;
 }
 .flash-box {
-  color: mainwhite;
   font-size: 1rem;
   font-weight: lighter;
   text-align: center;
@@ -26,25 +24,26 @@ html {
   color: #FFF;
 }
 .side-header {
-    background-color: whit;
-    height: 100px;
+  background-color: #253141;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  &__box {
     display: flex;
-    align-items: center;
-    padding: 0 20px;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+
+    &__menu {
+      display: flex;
+        li {
+          margin-left: 0.3rem;
+      }
+    }
+  }
 }
-.side-header__box {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-weight: bold;
-}
-.side-header__box__menu {
-  display: flex;
-  color: mainwhite
-}
-.side-header__box__menu li {
-  margin-left: 0.3rem;
-}
+
 .fa-pencil-square-o:before {
   content: "\f044";
 }
@@ -65,56 +64,41 @@ html {
 .group {
   margin-bottom: 40px;
   color: mainwhite;
-}
-.group__latest-message {
+  &__latest-message {
   font-size: 11px;
-}
-.group__group-name {
+    &__group-name {
   font-size: 15px;
   margin-bottom: 5px;
-}
-
-
-.side-header {
-  background-color: #253141;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-}
-.groups {
-  width: 300px;
-  height: calc(100vh - 100px);
-  background-color: #2f3e51;
-  padding: 20px 20px 0;
-  overflow: scroll;
+    }
+  }
 }
 .chat-main {
   width: calc(100vw - 300px);
   float: left;
 }
-.chat-main .main-header {
+.main-header {
   height: 100px;
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
   border-bottom: solid 1px #eee;
   overflow: scroll;
-}
-.main-header__left-box {
+
+  &__left-box {
   margin-top: 35px;
-}
-.main-header__left-box__current-group {
+    &__current-group {
   font-size: 20px;
   color: #333;
   margin-bottom: 15px;
-}
-.chat-main .main-header__left-box__member-list {
+    }
+  &__member-list {
   display: flex;
   font-size: 12px;
   color: #999999;
+    }
+  }
 }
-.chat-main .main-header__edit-btn {
+.main-header__edit-btn {
   height: 40px;
   line-height: 40px;
   padding: 0 20px;
@@ -145,26 +129,26 @@ input, textarea, select {
 .input-box {
   position: relative;
   width: 100%;
-}
-.input-box__text {
+  &__text {
   height: 50px;
   width: 100%;
   padding: 0 40px 0 10px;
   color: #434a54;
   border-style: none;
-}
-.fa-photo:before, .fa-image:before, .fa-picture-o:before {
-  content: "\f03e";
-}
-.input-box__image__file {
-  display: none;
-}
-.input-box__image {
+  }
+  &__image {
   font-size: 1.3rem;
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
+    &__file {
+  display: none;
+    }
+  }
+}
+.fa-photo:before, .fa-image:before, .fa-picture-o:before {
+  content: "\f03e";
 }
 .submit-btn {
   width: 100px;

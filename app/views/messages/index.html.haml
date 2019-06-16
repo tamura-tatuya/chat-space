@@ -9,33 +9,33 @@
             %p.side-header__box__user-name tt
             %ul.side-header__box__menu
               %li.side-header__box__menu__new-group
-                %a{:href => "/groups/new"}
+                =link_to "/groups/new" do
                   %i.fa.fa-edit
               %li.side-header__box__menu__edit-user
-                %a{:href => "/users/793/edit"}
+                =link_to "/users/793/edit" do
                   %i.fa.fa-cog
         .groups
-          %a{:href => "/groups/1609/messages"}
+          =link_to "/groups/1609/messages" do
             .group あああ
       .chat-main
         .main-header
           .main-header__left-box
-            %h2.main-header__left-box__current-group{"data-group_id" => "1609"}
+            %h2.main-header__left-box__current-group{ data_group_id: "1609"}
               aaaa
             %ul.main-header__left-box__member-list
               Member：
               %li.main-header__left-box__member-list__member
                 tt
-          %a{:href => "/groups/1609/edit"}
+          =link_to "/groups/1609/edit" do
             .main-header__edit-btn Edit
         .messages
         .form
-          %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/1609/messages", :enctype => "multipart/form-data", :method => "post"}
-            %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-            %input{:name => "authenticity_token", :type => "hidden", :value => "oFn2roRnPFWBEL8YJw9GhFaqng8BQYvKXOSHvaB2hlSqLrOi5kgXkZrmp7d7bq9HOORatVflGoTlAmrYRmxTKQ=="}/
+          %form#new_message.new_message{ accept_charset: "UTF-8", action: "/groups/1609/messages", enctype: "multipart/form-data", method: "post"}
+            %input{ name: "utf8", type: "hidden", value: "✓"}/
+            %input{ name: "authenticity_token", type: "hidden", value: "oFn2roRnPFWBEL8YJw9GhFaqng8BQYvKXOSHvaB2hlSqLrOi5kgXkZrmp7d7bq9HOORatVflGoTlAmrYRmxTKQ=="}/
             .input-box
-              %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-              %label.input-box__image{:for => "message_image"}
+              %input#message_content.input-box__text{ name: "message[content]", placeholder: "type a message", type: "text"}/
+              %label.input-box__image{ for: "message_image"}
                 %i.fa.fa-image
-                %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
-            %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+                %input#message_image.input-box__image__file{ name: "message[image]", type: "file"}/
+            %input.submit-btn{ data_disable_with: "Send", name: "commit", type: "submit", value: "Send"}/
