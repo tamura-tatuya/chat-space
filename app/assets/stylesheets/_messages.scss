@@ -2,17 +2,9 @@
 * {
   box-sizing: border-box;
 }
-a {
-  text-decoration: none;
-}
-html {
-  color: #000;
-  background: mainwhite;
-}
 .flash-box {
   font-size: 1rem;
   font-weight: lighter;
-  text-align: center;
   width: 100vw;
 }
 .chat-side  {
@@ -63,7 +55,6 @@ html {
 }
 .group {
   margin-bottom: 40px;
-  color: mainwhite;
   &__latest-message {
   font-size: 11px;
     &__group-name {
@@ -156,6 +147,6 @@ input, textarea, select {
   padding: 0 30px;
   margin-left: 15px;
   background-color: #38aef0;
-  color:mainwhite;
+  color: white;
   cursor: pointer;
 }
