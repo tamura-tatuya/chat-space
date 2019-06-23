@@ -1,4 +1,6 @@
-
+a {
+  text-decoration: none;
+}
 * {
   box-sizing: border-box;
 }
@@ -55,9 +57,9 @@
 }
 .group {
   margin-bottom: 40px;
-  &__latest-message {
+  &__latest_message {
   font-size: 11px;
-    &__group-name {
+    &__group_name {
   font-size: 15px;
   margin-bottom: 5px;
     }
