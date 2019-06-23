@@ -38,7 +38,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|ndex: true, null: false,|
+|name|string|index: true, null: false,|
 |e-mail|string|null: false|
 
 ### Association
