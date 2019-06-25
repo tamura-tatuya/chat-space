@@ -13,13 +13,27 @@
         =link_to edit_group_path(@group) do
           .main-header__edit-btn Edit
       .messages
+        = render @messages
       .form
-        %form#new_message.new_message{ acceptcharset: "UTF-8",method: "post"}
-          %input{ name: "utf8", type: "hidden"}
-          %input{ name: "authenticity_token", type: "hidden"}
-          .input-box
-            %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
-            %label.input-box__image{ for: "message_image"}
-              %i.fa.fa-image
-              %input#message_image.input-box__image__file{ name: "message[image]", type: "file"}/
-          %input.submit-btn{ data_disable_with: "Send", name: "commit", type: "submit", value: "Send"}/
+        .new_message
+          = form_for [@group, @message] do |f|
+            .input-box
+              = f.text_field :content,class: "message_content",placeholder: "type a message"
+              = f.label :image, class: 'input-box__image' do
+                = fa_icon 'picture-o', class: 'fa'
+                = f.file_field :image, class: 'hidden'
+            = f.submit 'Send', class: 'submit-btn' 
+
+
+
+
+        -# %form#new_message.new_message{ acceptcharset: "UTF-8",method: "post"}
+        -#   = form_for [@group, @message] do |f|
+        -#     %input{ name: "utf8", type: "hidden"}
+        -#     %input{ name: "authenticity_token", type: "hidden"}
+        -#   .input-box
+        -#     %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+        -#     %label.input-box__image{ for: "message_image"}
+        -#       %i.fa.fa-image
+        -#       %input#message_image.input-box__image__file{ name: "message[image]", type: "file"}/
+        -#   %input.submit-btn{ data_disable_with: "Send", name: "commit", type: "submit", value: "Send"}/
