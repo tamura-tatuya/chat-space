@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
 
   var search_list = $("#user-search-result");
 
@@ -9,7 +9,7 @@ $(function() {
                   </div>`
                   search_list.append(html);
   }
-    var member_list = $("#chat-group-user-22");
+    var member_list = $("#menber-search-result");
 
   function addUser(name,user_id){
     var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
