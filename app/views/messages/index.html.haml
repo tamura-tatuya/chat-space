@@ -11,7 +11,7 @@
             %li.main-header__left-box__member-list__member
               - @group.users.each do |group_user|
                 = group_user.name
-                -# グループの中のユーザーからグループユーザーから名前だけ取っている
+                -# グループの中のユーザーからグループユーザー名だけ取っている
         =link_to edit_group_path(@group) do
           .main-header__edit-btn Edit
       .messages
