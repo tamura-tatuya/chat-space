@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @users =  User.where('name LIKE(?) AND id != ?', "%#{params[:keyword]}%", current_user.id)
+    # LIKEnameあいまい検索をかけて!=?で一致しないとゆう意味、LIKE(?)１個目で#{params[:keyword]}をさし、２個目の？でcurrent_user.idをさす
       respond_to do |format|
         format.html
         format.json
