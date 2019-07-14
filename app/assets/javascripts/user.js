@@ -39,6 +39,7 @@ $(document).on('turbolinks:load', function() {
      })
 
   $("#user-search-field").on("keyup", function() {
+
     var input = $("#user-search-field").val();
 
     $.ajax({
@@ -50,14 +51,16 @@ $(document).on('turbolinks:load', function() {
 
     .done(function(users) {
       $("#user-search-result").empty();
-      if (users.length !== 0) {
+      if (users.length !== 0 && input) {
         users.forEach(function(user){
           appendUser(user);
         });
       }
-      else {
+      // inputに値があってなおかつ条件当てはまれば、上の記述
+      else if(input) {
         appendNoUser("一致するユーザーはいません。");
       }
+      // inputに値をあって条件に当てはまなければelse ifになる（これによって何も書いてなければelse ifが発動しなくなる）
     })
     .fail(function() {
       alert('ユーザー検索に失敗しました');
